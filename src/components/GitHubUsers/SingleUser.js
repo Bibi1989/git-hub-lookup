@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
   useParams,
-  useHistory,
-  useLocation,
-  useRouteMatch
+  useHistory
 } from "react-router-dom";
 import { useGet } from "restful-react";
 import { Spinner } from "../layout/Spinner";
@@ -14,7 +12,7 @@ import Repos from "./Repos";
 const SingleUser = () => {
   const client_id = process.env.REACT_APP_GITHUB_CLIENT_ID;
   const client_secret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
-  const [repos, setRepo] = useState();
+  const [repos, setRepo] = useState([]);
   const { login } = useParams();
   const history = useHistory();
 
@@ -28,10 +26,10 @@ const SingleUser = () => {
   if (loading) return <Spinner />;
   if (data !== null && error) return "Something went wrong...";
 
-  console.log(repos);
   function handleClick() {
     history.goBack();
   }
+
   return (
     <div>
       <p

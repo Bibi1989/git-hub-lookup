@@ -1,6 +1,7 @@
 import React, { useReducer } from "react";
 import { useGet } from "restful-react";
 import { Spinner } from "../layout/Spinner";
+import { reducer } from './reducer'
 
 export const Context = React.createContext();
 
@@ -15,11 +16,8 @@ export const ContextProvider = props => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  let text = state.text;
-
-  //   all users
   const { loading, error, data } = useGet(
-    `https://api.github.com/search/users?q=${text}&client_id=${client_id}&client_secret=${client_secret}`
+    `https://api.github.com/search/users?q=${state.text}&client_id=${client_id}&client_secret=${client_secret}`
   );
 
   if (loading) return <Spinner />;
@@ -36,15 +34,4 @@ export const ContextProvider = props => {
       {props.children}
     </Context.Provider>
   );
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "text":
-      return { ...state, text: action.payload };
-    case "single":
-      return { ...state, single: action.payload };
-    default:
-      return state;
-  }
 };
