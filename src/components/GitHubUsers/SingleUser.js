@@ -17,9 +17,6 @@ const SingleUser = () => {
   const [repos, setRepo] = useState();
   const { login } = useParams();
   const history = useHistory();
-  const location = useLocation();
-  console.log("his ", history);
-  console.log("loc ", location);
 
   const url = `https://api.github.com/users/${login}?client_id=${client_id}&client_secret=${client_secret}`;
   const { loading, error, data } = useGet(url);
