@@ -36,10 +36,10 @@ export const Grid = styled.div`
       color: #eee;
       text-decoration: none;
     }
-    .link-flex{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
+    .link-flex {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
     }
   }
 `;
@@ -62,6 +62,43 @@ export const Searchs = styled.div`
       border: 1px solid orangered;
       background: transparent;
       border-radius: 5px;
+    }
+  }
+`;
+
+// Repos styling
+export const ShowRepo = styled.ul`
+  padding: 3% 10%;
+  color: #777;
+  main {
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #999;
+    div {
+      margin: 10px 0;
+      font-size: 0.9rem;
+    }
+    a {
+      display: inline-block;
+      border: 1px solid orange;
+      text-decoration: none;
+      color: #999;
+      border-radius: 5px;
+      padding: 2px 10px;
+    }
+    .fork {
+      display: flex;
+      justify-content: space-around;
+      p:last-child {
+        display: flex;
+        img {
+          width: 16px;
+          margin-right: 5px;
+        }
+      }
+    }
+    span:first-child {
     }
   }
 `;
