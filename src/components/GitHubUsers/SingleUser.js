@@ -39,7 +39,8 @@ const SingleUser = () => {
           width: "7rem",
           margin: "10px 20px",
           padding: "6px 20px",
-          borderRadius: "5px"
+          borderRadius: "5px",
+          cursor: 'pointer'
         }}
         onClick={handleClick}
       >

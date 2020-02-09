@@ -38,7 +38,7 @@ export const ContextProvider = props => {
       value={{
         data: state.text === '' ? users : items,
         dispatch,
-        state
+        state,
       }}
     >
       {props.children}

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Searchs } from "../Styles/StyleComponent";
 import { Context } from "../Context/Context";
+import ShowAlert from "../layout/ShowAlert";
 
 const Search = () => {
   const [text, setText] = useState("");
@@ -11,6 +12,9 @@ const Search = () => {
 
   const handleSearch = e => {
     e.preventDefault();
+    if (text === "") {
+      return <ShowAlert />;
+    }
     dispatch({ type: "text", payload: text });
   };
 
@@ -19,6 +23,7 @@ const Search = () => {
       <form onSubmit={handleSearch}>
         <input
           type='text'
+          value={text}
           placeholder='Search githuber profile...'
           onChange={handleChange}
         />

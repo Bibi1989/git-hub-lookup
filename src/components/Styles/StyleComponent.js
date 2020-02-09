@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 export const Image = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 100%;
   overflow: hidden;
   img {
-    display: block;
-    margin: auto;
-    border-radius: 50%;
+    display: inline-block;
+    border-radius: 10px;
     width: 100%;
   }
 `;
@@ -18,13 +16,18 @@ export const Grid = styled.div`
   grid-gap: 30px;
   padding: 3% 10%;
   .user {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 25px 0 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    padding: 0.8rem;
     border: 1px solid orange;
     border-radius: 5px;
+    .name{
+      padding-left: 20px;
+      h1{
+        color: #777;
+      }
+    }
     a {
       margin-top: 20px;
       margin-bottom: 20px;
@@ -38,7 +41,7 @@ export const Grid = styled.div`
     }
     .link-flex {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       width: 100%;
     }
   }
@@ -177,3 +180,8 @@ export const Grid3 = styled.div`
   grid-gap: 0px;
   padding: 0 5%;
 `;
+
+export const H1 = styled.h1`
+  text-align: center;
+  color: #777;
+`
