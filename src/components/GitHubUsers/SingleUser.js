@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  useParams,
-  useHistory
-} from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { useGet } from "restful-react";
 import { Spinner } from "../layout/Spinner";
 import styled from "styled-components";
 import axios from "axios";
 import Repos from "./Repos";
-import { Grid1, Grid2, Grid3 } from '../Styles/StyleComponent'
+import { Grid1, Grid2, Grid3 } from "../Styles/StyleComponent";
 
 const SingleUser = () => {
   const client_id = process.env.REACT_APP_GITHUB_CLIENT_ID;
@@ -40,7 +37,7 @@ const SingleUser = () => {
           margin: "10px 20px",
           padding: "6px 20px",
           borderRadius: "5px",
-          cursor: 'pointer'
+          cursor: "pointer"
         }}
         onClick={handleClick}
       >
@@ -94,21 +91,21 @@ const SingleUser = () => {
             <h1>{data === undefined || data.name}</h1>
           </div>
           <p>
-            <span>Email: </span>
+            <span className='fa fa-envelope'></span>
             {data === undefined || data.email}
           </p>
           <p>
-            <span>Blog: </span>
+          <span className='fa fa-rss'></span>
             {data === undefined || data.blog === "" ? "No blog" : data.blog}
           </p>
           <p>
-            <span>Location: </span>
+          <span className='fa fa-street-view'></span>
             {data === undefined || data.location === null
               ? "No location"
               : data.location}
           </p>
           <p>
-            <span>Location: </span>
+          <span className='fa fa-building'></span>
             {data === undefined || data.company === null
               ? "No company"
               : data.company}

@@ -165,9 +165,11 @@ export const Grid2 = styled.div`
     padding-bottom: 20px;
   }
   a {
+    display: inline-block;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
+    margin: 15px 0;
     background: orangered;
     color: #eee;
     text-decoration: none;
