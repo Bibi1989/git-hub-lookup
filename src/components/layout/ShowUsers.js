@@ -10,7 +10,7 @@ export const ShowUsers = ({ detail }) => (
     <p>{detail.login}</p>
     <div className="link-flex">
     <a href={detail.html_url}>GitHub Profile</a>
-    <Link to={`/user/${detail.login}`}>GitHub Profile</Link>
+    <Link to={`/user/${detail.login}`}>User Profile</Link>
     </div>
     <hr />
   </div>

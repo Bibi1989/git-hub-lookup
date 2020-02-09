@@ -102,3 +102,78 @@ export const ShowRepo = styled.ul`
     }
   }
 `;
+
+export const Grid1 = styled.div`
+  padding: 20px;
+  color: #777;
+  .img {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+    }
+  }
+  .bio {
+    p {
+      padding-right: 20px;
+      text-align: center;
+    }
+  }
+  .follower {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    i {
+      color: orange;
+    }
+    span {
+      padding-left: 1rem;
+      color: #777;
+    }
+    p {
+      width: 100%;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+    .repo {
+      padding: 20px 0;
+    }
+  }
+`;
+
+export const Grid2 = styled.div`
+  span {
+    color: orange;
+    margin-right: 20px;
+  }
+  h1 {
+    padding: 3% 0;
+    font-size: 3rem;
+  }
+  p {
+    margin: 20px 0;
+  }
+  p:last-child {
+    padding-bottom: 20px;
+  }
+  a {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background: orangered;
+    color: #eee;
+    text-decoration: none;
+  }
+`;
+
+export const Grid3 = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0px;
+  padding: 0 5%;
+`;

@@ -11,7 +11,8 @@ const Users = () => {
       <Search />
       <Grid>
         {data === null ||
-          data.items.map(detail => {
+        data === undefined ||
+          data.map(detail => {
             return <ShowUsers key={detail.id} detail={detail} />;
           })}
       </Grid>

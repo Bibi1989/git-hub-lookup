@@ -1,7 +1,8 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState, useEffect } from "react";
 import { useGet } from "restful-react";
 import { Spinner } from "../layout/Spinner";
-import { reducer } from './reducer'
+import { reducer } from "./reducer";
+import axios from "axios";
 
 export const Context = React.createContext();
 
@@ -15,6 +16,13 @@ export const ContextProvider = props => {
   const client_secret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
 
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`https://api.github.com/users`)
+      .then(res => setUsers(res.data));
+  }, []);
 
   const { loading, error, data } = useGet(
     `https://api.github.com/search/users?q=${state.text}&client_id=${client_id}&client_secret=${client_secret}`
@@ -23,12 +31,14 @@ export const ContextProvider = props => {
   if (loading) return <Spinner />;
   if (data !== null && error) return "Something went wrong...";
 
+  let {items} = data === null || data
+
   return (
     <Context.Provider
       value={{
-        data,
+        data: state.text === '' ? users : items,
         dispatch,
-        state,
+        state
       }}
     >
       {props.children}
