@@ -64,7 +64,7 @@ const SingleUser = () => {
                 {" "}
                 Followers <i className='fa fa-arrow-right'></i>
               </i>
-              <span>{data === undefined || data.followers}</span>
+              <span>{data === undefined ? null : data.followers}</span>
               <p className='repo'>
                 Public Repos <i className='fa fa-arrow-right'></i>{" "}
                 {data === undefined || data.public_repos}
@@ -75,42 +75,42 @@ const SingleUser = () => {
                 {" "}
                 Following <i className='fa fa-arrow-right'></i>
               </i>
-              <span>{data === undefined || data.following}</span>
+              <span>{data === undefined ? null : data.following}</span>
               <p className='repo'>
                 Public Gists <i className='fa fa-arrow-right'></i>{" "}
-                {data === undefined || data.public_gists}
+                {data === undefined ? null : data.public_gists}
               </p>
             </div>
           </div>
           <div className='bio'>
-            <p>{data === undefined || data.bio}</p>
+            <p>{data === undefined ? null : data.bio}</p>
           </div>
         </Grid1>
         <Grid2>
           <div>
-            <h1>{data === undefined || data.name}</h1>
+            <h1>{data === undefined ? null : data.name}</h1>
           </div>
           <p>
             <span className='fa fa-envelope'></span>
-            {data === undefined || data.email}
+            {data === undefined ? null : data.email}
           </p>
           <p>
           <span className='fa fa-rss'></span>
-            {data === undefined || data.blog === "" ? "No blog" : data.blog}
+            {data === undefined ? null : data.blog === "" ? "No blog" : data.blog}
           </p>
           <p>
           <span className='fa fa-street-view'></span>
-            {data === undefined || data.location === null
+            {data === undefined ? null : data.location === null
               ? "No location"
               : data.location}
           </p>
           <p>
           <span className='fa fa-building'></span>
-            {data === undefined || data.company === null
+            {data === undefined ? null : data.company === null
               ? "No company"
               : data.company}
           </p>
-          <a href={data === undefined || data.html_url}>GitHub Profile</a>
+          <a href={data === undefined ? null : data.html_url}>GitHub Profile</a>
         </Grid2>
       </Parent>
       <h2 style={{ textAlign: "center", fontSize: "3rem", padding: "30px 0" }}>
